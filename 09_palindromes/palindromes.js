@@ -1,12 +1,12 @@
 const palindromes = (str) => {
-  let punctuationRegex = /[^a-z]/g;
+  let punctuationRegex = /[^\w\s]|_/g;
   let sentence = str
     .toLowerCase()
     .replaceAll(" ", "")
     .replaceAll(punctuationRegex, "");
   let sentenceRev = sentence.split("").reverse().join("");
 
-  if (sentence == sentenceRev) {
+  if (sentence === sentenceRev) {
     return true;
   } else {
     false;
